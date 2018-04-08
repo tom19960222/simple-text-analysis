@@ -23,7 +23,7 @@ def get_news_id(url):
     return id_split
 
 
-def main():
+def main(event, context):
     table = dynamodb.Table('News')
     news_id_list = []
 
@@ -40,7 +40,7 @@ def main():
         table.update_item(
             Key={'news_id': news_id},
             UpdateExpression='SET news_link = :news_link, news_title = :news_title, '
-                             'news_content = :news_content, type = :type',
+                             'news_content = :news_content, datatype = :type',
             ExpressionAttributeValues={
                 ':news_link': news_link,
                 ':news_title': news_title,
@@ -62,3 +62,6 @@ def main():
     )
     print('Sent SNS notification, responded with {}'.format(sns_response))
 
+
+if __name__ == '__main__':
+    main()

@@ -23,7 +23,7 @@ def get_news_id(url):
     return id_split
 
 
-def main():
+def main(event, context):
     table = dynamodb.Table('News')
     news_id_list = []
 
