@@ -57,11 +57,11 @@ def main(event, context):
         print('---------------------------')
         print()
     sns_response = client.publish(
-        TopicArn='arn:aws:sns:ap-northeast-1:046512953700:Python-Data-Analysis',
+        TopicArn='arn:aws:sns:ap-northeast-1:046512953700:PoliticsNews',
         Message=json.dumps({'news_id_list': news_id_list})
     )
     print('Sent SNS notification, responded with {}'.format(sns_response))
 
-
+set().
 if __name__ == '__main__':
     main()

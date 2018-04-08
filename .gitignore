@@ -2,3 +2,14 @@
 clawer/**
 !clawer/politics_clawer.py
 !clawer/entertainment_clawer.py
+*.zip
+
+analyser/jieba/
+
+analyser/lib/
+
+analyser/numpy/
+
+analyser/scipy/
+
+analyser/sklearn/

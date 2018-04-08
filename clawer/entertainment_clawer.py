@@ -40,7 +40,7 @@ def main(event, context):
         table.update_item(
             Key={'news_id': news_id},
             UpdateExpression='SET news_link = :news_link, news_title = :news_title, '
-                             'news_content = :news_content, type = :type',
+                             'news_content = :news_content, datatype = :type',
             ExpressionAttributeValues={
                 ':news_link': news_link,
                 ':news_title': news_title,
@@ -57,7 +57,7 @@ def main(event, context):
         print('---------------------------')
         print()
     sns_response = client.publish(
-        TopicArn='arn:aws:sns:ap-northeast-1:046512953700:Python-Data-Analysis',
+        TopicArn='arn:aws:sns:ap-northeast-1:046512953700:EntertainmentNews',
         Message=json.dumps({'news_id_list': news_id_list})
     )
     print('Sent SNS notification, responded with {}'.format(sns_response))
