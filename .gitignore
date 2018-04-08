@@ -1,0 +1,4 @@
+.idea/**
+clawer/**
+!clawer/politics_clawer.py
+!clawer/entertainment_clawer.py
